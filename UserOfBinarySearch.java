@@ -25,7 +25,7 @@ public class UserOfBinarySearch {
         System.out.println();
         for( int i = 0; i < orderedList.size(); i++) {
             findMe = orderedList.get( i);
-            foundAt = orderedList.indexOf( findMe);
+            foundAt = orderedList.indexOf(0, orderedList.size() -1, findMe);
             System.out.println( 
                 "Value " + findMe
               + " was found at index " + foundAt

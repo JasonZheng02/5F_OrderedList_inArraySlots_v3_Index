@@ -18,9 +18,26 @@ public class OrderedList_inArraySlots
               \findMe is absent from this list.
      */
     public int indexOf( Integer findMe) {
+        int low = 0;
+        int high = size()-1;
+        while (low <= high) {
+            int indexToCheck = (low + high) / 2;
+            if      (get(indexToCheck) == findMe) return indexToCheck;
+            else if (get(indexToCheck) > findMe)  high = indexToCheck - 1;
+            else                                  low = indexToCheck + 1;
+        }
         return -1;
     }
     
+    public int indexOf( int low, int high, Integer findMe) {
+        int indexToCheck = (low + high) / 2;
+        if (get(indexToCheck) == findMe) 
+            return indexToCheck;
+        if (get(indexToCheck) > findMe) 
+            return indexOf(low, indexToCheck - 1, findMe);
+        else 
+            return indexOf(indexToCheck + 1, high, findMe);
+    }
 
     // ------ code from previous assignments below here ----
 

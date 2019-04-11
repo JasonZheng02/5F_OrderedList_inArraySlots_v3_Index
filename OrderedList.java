@@ -6,6 +6,7 @@ public interface OrderedList{
               \findMe is absent from this list.
      */
     int indexOf( Integer findMe);
+    int indexOf( int low, int high, Integer findMe);
 
 
     // ------ methods from previous assignments below here ----
